@@ -1,0 +1,3 @@
+import foundation
+
+Class[ 'foundation': ]
