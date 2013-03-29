@@ -21,9 +21,29 @@ class foundation {
         require => Exec["/usr/bin/apt-get update"],
     }
 
+    service { "ntp":
+        ensure => running,
+        require => Package["ntp"],
+    }
+
+    file { "/etc/ntp.conf":
+        ensure => file,
+        owner  => root,
+        group  => root,
+        source => "puppet:///modules/system/ntp.conf",
+    }
+
     package { "tzdata":
         ensure  => installed,
         require => Exec["/usr/bin/apt-get update"],
+    }
+
+    file { "/etc/timezone":
+        ensure  => file,
+        owner   => root,
+        group   => root,
+        source  => "puppet:///modules/system/timezone",
+        require => Package["tzdata"],
     }
 
     package { "ntpdate":
@@ -41,10 +61,3 @@ class foundation {
         require => Exec["/usr/bin/apt-get update"],
     }
 }
-
-# TODO:
-#zsh
-#ntp
-#ntpdate
-#systat
-#curl
