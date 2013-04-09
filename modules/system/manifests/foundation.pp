@@ -22,7 +22,7 @@ class foundation {
     }
 
     service { "ntp":
-        ensure => running,
+        ensure  => running,
         require => Package["ntp"],
     }
 

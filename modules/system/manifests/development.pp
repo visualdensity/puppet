@@ -25,4 +25,8 @@ class development inherits foundation
         require => Package["ruby"],
     }
 
+    exec { "/usr/bin/gem install rake":
+      onlyif  => "/usr/bin/gem list | grep -ci rake",
+      require => Package["rubygems"],
+    }
 }
