@@ -9,3 +9,7 @@ Links
   * http://docs.puppetlabs.com/
   * http://www.puppetcookbook.com/
   * https://puppetlabs.com/blog/
+  * http://www.puppetcookbook.com/
+  * https://puppetlabs.com/blog/
+  * http://www.puppetcookbook.com/
+  * https://puppetlabs.com/blog/
